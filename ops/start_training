@@ -1,0 +1,8 @@
+python3 -m venv venv
+alias python="venv/bin/python3.12"
+alias pip="venv/bin/pip3.12"
+source venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
+#python training.py --dev # to run locally on dev machine (faster)
+nohup python training.py > /dev/null 2>&1 &
