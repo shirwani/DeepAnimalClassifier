@@ -31,6 +31,7 @@ def run():
     test_images = get_jpeg_files(test_images_folder)
 
     return render_template("getUserInput.html",
+                           dev=dev,
                            default_img_url=default_img_url,
                            icon_img=icon_img,
                            model=model,
@@ -49,12 +50,14 @@ def identify():
     img_url = request.json
     print(img_url)
 
+    print("FOO")
     try:
         img_data = requests.get(img_url).content
     except:
         print("BAD_URL: " + img_url)
         return render_template("imageError.html")
 
+    print("BAR")
     image = img_to_matrix(BytesIO(img_data), num_px)
     print(f"image.shape: {image.shape}")
     image = image.reshape((1, -1)) / 255.

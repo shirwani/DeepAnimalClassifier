@@ -59,8 +59,18 @@ def copy_examples(mode, num_examples):
         copy_image_files(srcdir, dstdir, num_examples)
 
 
+def create_examples_for_app(num_examples):
+    for cls in classes:
+        srcdir = os.path.join('/Users', 'macmini', 'Downloads', 'animals', cls)
+        dstdir = os.path.join(os.getcwd(), 'static', 'images', 'examples')
+        os.makedirs(dstdir, exist_ok=True)
+        copy_image_files(srcdir, dstdir, num_examples)
+
+
 if __name__ == '__main__':
     cleanup_images_folder()
     copy_examples('train',  num_examples=2000)
-    copy_examples('test',   num_examples=20)
     copy_examples('cv',     num_examples=20)
+    copy_examples('test',   num_examples=20)
+
+    create_examples_for_app(num_examples=50)

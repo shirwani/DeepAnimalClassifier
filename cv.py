@@ -39,7 +39,7 @@ def cross_validation(cfg):
 
 
 if __name__ == '__main__':
-    dev = False
+    dev = True
     if len(sys.argv) > 1:
         if sys.argv[1] == '-dev' or sys.argv[1] == '--dev':
             dev = True

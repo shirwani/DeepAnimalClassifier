@@ -8,7 +8,7 @@
             "log_file": "training.log",
             "learning_rate": 0.01,
             "regularizer": 0.001,
-            "epochs": 10
+            "epochs": 1
         },
         "test": {
             "data_file": "datasets/test.h5"
@@ -17,7 +17,7 @@
             "data_file": "datasets/cv.h5"
         },
         "model": {
-            "file": "m_20250307061208.h5"
+            "file": "m_20250307075826.keras"
         },
         "classes": [
             "butterfly",
@@ -33,9 +33,9 @@
         ],
         "flask-app": {
             "port": 5003,
-            "icon_img": "https://zakishirwani.tech/ai/cats/static/images/cat-icon4.jpg",
-            "default_img_url": "https://zakishirwani.tech/ai/cats/static/images/cat-icon4.jpg",
-            "test_images_folder": "static/images",
+            "icon_img": "http://localhost:5003/static/images/caticon.jpg",
+            "default_img_url": "http://localhost:5003/static/images",
+            "test_images_folder": "static/images/examples",
             "proj_location": ""
         }
     },
@@ -57,7 +57,7 @@
             "data_file": "datasets/cv.h5"
         },
         "model": {
-            "file": "m_20231215205905.h5"
+            "file": "m_20250307075826.keras"
         },
         "classes": [
             "butterfly",
@@ -73,9 +73,9 @@
         ],
         "flask-app": {
             "port": 5003,
-            "icon_img": "https://localhost:5003/static/images/caticon.jpg",
-            "default_img_url": "https://localhost:5003/static/images/caticon.jpg",
-            "test_images_folder": "static/images",
+            "icon_img": "http://66-228-35-9.ip.linodeusercontent.com/ai/animals/static/images/caticon.jpg",
+            "default_img_url": "http://66-228-35-9.ip.linodeusercontent.com/ai/animals/static/images",
+            "test_images_folder": "static/images/examples",
             "proj_location": "ai/animals/"
         }
     }

@@ -1,0 +1,23 @@
+#!/bin/bash
+
+arg=${1}
+
+python3 -m venv venv
+alias python="venv/bin/python3.12"
+alias pip="venv/bin/pip3.12"
+source venv/bin/activate
+pip install --upgrade pip
+pip install gunicorn
+pip install -r requirements.txt
+
+
+if [ "$arg" = "--dev"  ]; then
+  python application.py --dev
+else
+  pkill -f DeepAnimalClassifier
+  nohup gunicorn -b 127.0.0.1:5003 application:app > /dev/null 2>&1 &
+  # MODEL="m_20250306125531.h5" nohup gunicorn -b 127.0.0.1:5003 application:app > /dev/null 2>&1 &
+fi
+
+
+

@@ -12,6 +12,7 @@
         #img_url  { width: 500px; }
         .img_icon { width: 100px; }
         #model    { align: right; font-style: italic; }
+        #dev      { align: right; font-style: italic; font-weight: bold; color: red; }
     </style>
 </head>
 <body>
@@ -20,6 +21,10 @@
             <img class="img_icon" src="{{ icon_img }}">
             <h1>What animal is this?</h1>
             <span id="model">Low accuracy version: {{ model }}</span>
+            {% if dev %}
+                <br/>
+                <span id="dev">dev: {{ dev }}</span>
+            {% endif %}
         </div>
 
         <div class="jumbotron">

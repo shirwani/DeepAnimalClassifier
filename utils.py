@@ -24,6 +24,7 @@ def get_probs_for_all_classes(probabilities, classes):
 
 
 def get_jpeg_files(folder_path):
+    print(folder_path)
     return glob.glob(os.path.join(folder_path, '*.jpeg'), recursive=False)
 
 

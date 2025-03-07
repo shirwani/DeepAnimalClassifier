@@ -1,6 +1,8 @@
 function sendContentToApp(){
     var img_url_selection = document.getElementById("img_url_selection")
     var img = img_url_selection.options[img_url_selection.selectedIndex].value
+
+
     var xhr = new XMLHttpRequest();
     var url = window.location.href + '/result';
 

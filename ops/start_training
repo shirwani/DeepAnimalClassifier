@@ -1,8 +1,18 @@
+#!/bin/bash
+
+arg=${1}
+
 python3 -m venv venv
 alias python="venv/bin/python3.12"
 alias pip="venv/bin/pip3.12"
 source venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
-#python training.py --dev # to run locally on dev machine (faster)
-nohup python training.py > /dev/null 2>&1 &
+mkdir -p ./models
+
+if [ "$arg" = "--dev"  ]; then
+  python train.py --dev
+else
+  pkill -f DeepAnimalClassifier
+  nohup python train.py > /dev/null 2>&1 &
+fi
