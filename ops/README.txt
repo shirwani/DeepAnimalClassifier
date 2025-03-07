@@ -21,6 +21,8 @@
 #   Make sure python3 is aliased to python 3.12
 #######################################################################
     cd ~/DeepAnimalClassifier
+    apt update
+    apt install python3.12-venv
     python3 -m venv venv
     alias python="venv/bin/python3.12"
     alias pip="venv/bin/pip3.12"
