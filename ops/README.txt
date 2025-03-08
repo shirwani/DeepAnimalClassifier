@@ -116,9 +116,14 @@
 ###################################################
     cd /var/www/flask-apps/DeepAnimalClassifier
     pkill -f DeepAnimalClassifier
-    # To use model from ./config.json
-    nohup gunicorn -b 127.0.0.1:5003 application:app > /dev/null 2>&1 &
-    # To run specific model
-    # MODEL="m_20250306125531.h5" nohup gunicorn -b 127.0.0.1:5003 application:app > /dev/null 2>&1 &
 
+    #################################
+    # To use model from ./config.json
+    #################################
+    nohup gunicorn -b 127.0.0.1:5003 application:app > /dev/null 2>&1 &
+
+    ##########################################
+    # To use model specified from command line
+    ##########################################
+    # MODEL="m_20250306125531.h5" nohup gunicorn -b 127.0.0.1:5003 application:app > /dev/null 2>&1 &
 
